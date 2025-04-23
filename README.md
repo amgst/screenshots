@@ -2,8 +2,6 @@
 
 A full-stack application for capturing high-quality screenshots of websites in both desktop and mobile views.
 
-![Screenshot Tool Demo](https://via.placeholder.com/800x400?text=Screenshot+Tool+Demo)
-
 ## Features
 
 - **Dual View Capture**: Generate both desktop and mobile screenshots simultaneously
