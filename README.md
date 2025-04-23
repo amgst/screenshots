@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Website Screenshot Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack application for capturing high-quality screenshots of websites in both desktop and mobile views.
 
-## Available Scripts
+![Screenshot Tool Demo](https://via.placeholder.com/800x400?text=Screenshot+Tool+Demo)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Dual View Capture**: Generate both desktop and mobile screenshots simultaneously
+- **High Quality Mode**: Choose between normal (faster) and high quality (better resolution) screenshots
+- **Full Page Screenshots**: Captures the entire webpage, including content below the fold
+- **Progress Tracking**: Real-time progress indicators during the capture process
+- **Download & Share**: Easily download or view full-size screenshots
+- **Responsive UI**: Clean, mobile-friendly interface built with React and Bootstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- React
+- Bootstrap 5
+- CSS3
 
-### `npm test`
+### Backend
+- Node.js
+- Express.js
+- Puppeteer (headless Chrome)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### Prerequisites
+- Node.js 14.x or higher
+- npm 6.x or higher
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/website-screenshot-tool.git
+cd website-screenshot-tool
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
+```bash
+npm install
+```
 
-### `npm run eject`
+3. Start the backend server:
+```bash
+node server.js
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. In a separate terminal, start the frontend development server:
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Access the application at `http://localhost:3000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Enter a website URL in the input field (e.g., example.com)
+2. Toggle "High Quality Mode" if desired (slower but better resolution)
+3. Click "Capture Screenshot"
+4. Wait for both desktop and mobile screenshots to be generated
+5. View, download, or share the resulting screenshots
 
-## Learn More
+## Configuration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can modify the following parameters in `server.js`:
+- Screenshot resolution (default: 1920x1080 for desktop, 390x844 for mobile)
+- Quality settings
+- Timeouts and waiting periods
+- File formats (PNG/JPEG)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API Endpoints
 
-### Code Splitting
+- `POST /api/screenshot`: Generate screenshots for a given URL
+- `GET /api/test`: Test if the API is running
+- `GET /api/list-screenshots`: View all previously captured screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## File Structure
 
-### Analyzing the Bundle Size
+```
+screenshot-api/
+├── server.js              # Backend server and API endpoints
+├── screenshots/           # Directory for saved screenshots (auto-created)
+├── src/
+│   ├── App.js            # Main React component
+│   ├── App.css           # Styles for the application
+│   └── ...
+├── public/
+│   ├── index.html
+│   └── ...
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+[MIT](LICENSE)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgements
 
-### Deployment
+- [Puppeteer](https://pptr.dev/) - Headless Chrome Node.js API
+- [React](https://reactjs.org/) - Frontend library
+- [Bootstrap](https://getbootstrap.com/) - CSS framework
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Created with ❤️ by Azam
